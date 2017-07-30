@@ -3,16 +3,31 @@
 import sys
 import os
 
-if len(sys.argv) == 1:
-    print("Error. Not sufficient arguments")
-    sys.exit(1)
+if len(sys.argv)>1:
 
-if len(sys.argv) >= 1:
-    file_name = sys.argv[1]
-    if not os.path.isfile(file_name):
-        with open(file_name, 'w') as f:
-            f.write("Written file")
-    
-    if
+#Condition to display list
+    if sys.argv[1] == "-v":
+        file = open("todo.txt","r")
+        print(file.read())
+
+#Condition to append the todo item
+    elif sys.argv[1] == "-a":
+        f = open("todo.txt", "a")
+        f.write(sys.argv[2]+"\n")
+        f.close()
+
+#if invalid parameter passed
+    else:
+        print("Invalid Parameter")
+
+#if no parameter passed
+    else:
+        print("No args specified")
+
+if __name__=="__main__":
+    todo_list()
+
+
+
 
      
