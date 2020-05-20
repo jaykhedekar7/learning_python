@@ -1,0 +1,5 @@
+enter this in cmd
+
+$PathToPython = 'C:\whatever\containingfolderforpythonexe'
+$CurrentValue = [Environment]::GetEnvironmentVariable('Path', 'Machine')
+[Environment]::SetEnvironmentVariable('Path', "$CurrentValue;$PathToPython", 'Machine')
